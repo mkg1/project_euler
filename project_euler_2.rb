@@ -4,13 +4,25 @@
 #
 # By considering the terms in the Fibonacci sequence whose values do not exceed four million, find the sum of the even-valued terms.
 
+#ugly method:
 fib = [1, 2]
 i = 0
-while fib[i - 1] < 4000001
+while fib[i + 1] < 4000001
   nextup = fib[i] + fib[i + 1]
   fib << nextup
   i +=1
-  print "#{i} and #{fib[i]}  "
 end
-# print fib
-# print fib.inject(0, :+)
+
+lessers = fib[0..-2]
+print lessers
+to_add = []
+lessers.each do |n|
+  if n.even?
+    to_add << n
+  end
+end
+print to_add
+
+print to_add.inject(0, :+)
+
+#correct answer: 4613732
