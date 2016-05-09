@@ -5,7 +5,7 @@
 
 def find_factors(number)
   factors = []
-  (1..100).each do |n|
+  (2..Math.sqrt(number)).each do |n|
     if number % n == 0
       factors << n
     end
@@ -13,10 +13,10 @@ def find_factors(number)
   return factors
 end
 
-factors = find_factors(100)
-
-def find_primes(array)
-  array.each do |x|
-    ...
-  end
-end
+factors = find_factors(600851475143)
+print factors
+# def find_primes(array)
+#   array.each do |x|
+#     ...
+#   end
+# end
